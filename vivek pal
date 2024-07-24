@@ -1,0 +1,51 @@
+package harry;
+public class StudentGradeAnalyzer {
+    public static void main(String[] args) {
+        // Array with grades of 10 students
+        int[] grades = {85, 90, 78, 92, 88, 76, 95, 89, 91, 82};
+
+        // Calculate average grade
+        double average = calculateAverage(grades);
+        System.out.println("Average Grade: " + average);
+
+        // Find highest grade
+        int highestGrade = findHighestGrade(grades);
+        System.out.println("Highest Grade: " + highestGrade);
+
+        // Find lowest grade
+        int lowestGrade = findLowestGrade(grades);
+        System.out.println("Lowest Grade: " + lowestGrade);
+    }
+
+    // Method to calculate average grade
+    public static double calculateAverage(int[] grades) {
+        int sum = 0;
+        for (int grade : grades) {
+            sum += grade;
+        }
+        return (double) sum / grades.length;
+    }
+
+    // Method to find highest grade
+    public static int findHighestGrade(int[] grades) {
+        int highest = grades[0];
+        for (int grade : grades) {
+            if (grade > highest) {
+                highest = grade;
+            }
+        }
+        return highest;
+    }
+
+    // Method to find lowest grade
+    public static int findLowestGrade(int[] grades) {
+        int lowest = grades[0];
+        for (int grade : grades) {
+            if (grade < lowest) {
+                lowest = grade;
+            }
+        }
+        return lowest;
+    }
+}
+
